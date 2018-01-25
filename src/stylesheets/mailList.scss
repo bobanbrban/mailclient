@@ -7,8 +7,8 @@ $text: #333333;
 $border: #B5B5B5;
 
 
-ul {
-  
+.mailsList {
+
   margin: 0px;
   padding: 0px;
   width:330px;
@@ -23,13 +23,13 @@ ul {
 
 li {
 
-border-bottom: 1px solid $border; 
+border-bottom: 1px solid $border;
 padding-top: 15px;
 
 }
 
 
- a:hover { 
+ a:hover {
 
    color: $selectedBar;
 
@@ -37,25 +37,25 @@ padding-top: 15px;
 
 
 .mail1 {
-    
+
     width: 320px;
     height: 80px;
     overflow: hidden;
-    
+
 }
 
 .mail2 {
-  
+
     width: 320px;
     height: 80px;
     overflow: hidden;
-    
+
 }
 
 
 
-li:hover  { 
-     
+li:hover  {
+
    border-left: 3px solid $selectedBar;
-     
+
   }

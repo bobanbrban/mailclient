@@ -9,18 +9,13 @@ import '../stylesheets/mediaQueries.css';
 
 class Trash extends React.Component {
 
-
-
-
-    render() {
-
-        return (
-                   <div>
-                     <ul>
-                     </ul>
-                   </div>
-                 )} ;
-             }
-
-
+      render() {
+          return (
+                <div>
+                      <ul>
+                      </ul>
+                </div>
+           );
+       }
+   }
 export default Trash

@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
-import { maildata } from './mailData';
+import { mailsdata } from './mailData';
 
 
-export const rootReducer = combineReducers({maildata, routing: routerReducer});
+export const rootReducer = combineReducers({mailsdata, routing: routerReducer});
