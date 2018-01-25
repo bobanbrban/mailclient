@@ -1,28 +1,15 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import FilterLink from '../containers/FilterLink'
 
-const Link = ({ active, children, onClick }) => {
-  if (active) {
-    return <span>{children}</span>
-  }
+class Spam extends React.Component {
 
-  return (
-    // eslint-disable-next-line
-    <a href="#"
-       onClick={e => {
-         e.preventDefault()
-         onClick()
-       }}
-    >
-      {children}
-    </a>
-  )
-}
-
-Link.propTypes = {
-  active: PropTypes.bool.isRequired,
-  children: PropTypes.node.isRequired,
-  onClick: PropTypes.func.isRequired
-}
-
-export default Link
+    render() {
+        return (
+              <div>
+                    <ul>
+                    </ul>
+              </div>
+         );
+     }
+ }
+export default Spam
