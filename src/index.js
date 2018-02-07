@@ -1,8 +1,46 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
-import { routerMain } from './App';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
+import React from "react"
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import createBrowserHistory from 'history/createBrowserHistory';
+import { syncHistoryWithStore } from 'react-router-redux';
+import { rootReducer }  from './reducers/index';
+import mainHeader from './components/mainHeader';
+import inboxApp from './components/Inbox';
+import trashApp from './components/Trash';
+import spamApp from './components/Spam';
+import {
+  Router,
+  Route
+} from 'react-router-dom';
+import FaTrash from 'react-icons/lib/fa/trash';
+import FaInbox from 'react-icons/lib/fa/inbox';
+import FaBug from 'react-icons/lib/fa/bug';
+import App from './components/App';
 
-ReactDOM.render(routerMain, document.getElementById('root'));
+
+
+
+const store = createStore(rootReducer);
+console.log(store.getState());
+
+const history = createBrowserHistory();
+
+const storeHistory = syncHistoryWithStore(history, store);
+
+ReactDOM.render(
+  <Provider store={store} history={storeHistory}>
+   <Router history={history}>
+      <div className="navHeader">
+         <Route path="/" component={mainHeader} history={history}/>
+         <Route exact path="/" component={inboxApp} history={history}/>
+         <Route exact path="/Inbox" component={inboxApp} />
+         <Route exact path="/Trash" component={trashApp} />
+         <Route exact path="/Spam" component={spamApp} />
+      </div>
+   </Router>
+  </Provider>
+, document.getElementById('root'));
 registerServiceWorker();

@@ -7,7 +7,7 @@
 
 .Date {
   text-align: right;
-  margin-right: 13px;
+  margin-right: 20px;
   margin-left: 40px;
   float: right;
   font-size: .7em; }
@@ -21,7 +21,8 @@
 .Sender {
   font-size: 12px;
   text-align: left;
-  margin-left: 0px; }
+  margin-left: 11px;
+  padding-left: 11px; }
 
 .senderName {
   font-size: 14px;
@@ -41,6 +42,10 @@
   margin-left: 10px;
   padding-top: 8px;
   font-size: 14px; }
+
+.margintitle {
+  position: sticky;
+  left: 27px; }
 
 .active {
   color: #4990E2; }
