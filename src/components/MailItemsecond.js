@@ -68,15 +68,16 @@ class MailItemtest extends Component {
   }
   }
 
-  const mapStateToProps = state =>  ({
-    state
-    });
 
+  const mapStateToProps = state =>  ({
+      state
+  });
   const mapDispachToProps = (dispatch,ownProps)=> ({
     onSetTrash: () => dispatch({type: actionTypes.SET_TRASH, id:ownProps.mail.id}),
     onSetSpam: () => dispatch({type: actionTypes.SET_SPAM, id:ownProps.mail.id}),
     onSetReaded: () => dispatch({type: actionTypes.SET_READED, id:ownProps.mail.id}),
   });
-  const MailItem = connect(mapStateToProps, mapDispachToProps)(MailItemtest);
+  const MailItemsecond = connect(mapStateToProps, mapDispachToProps)(MailItemtest);
 
-export default MailItem;
+export default MailItemsecond;
+

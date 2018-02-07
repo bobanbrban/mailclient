@@ -4,8 +4,10 @@
   "private": true,
   "dependencies": {
     "history": "^4.7.2",
+    "immutable": "^3.8.2",
     "node-sass-chokidar": "0.0.3",
     "npm-run-all": "^4.1.2",
+    "object-merge-advanced": "^8.3.4",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-icons": "^2.2.7",

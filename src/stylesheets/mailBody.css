@@ -13,7 +13,7 @@ body {
   margin-right: auto;
   opacity: .08; }
 
-.Project {
+.mailRight {
   font-family: "Helvetica";
   font-style: regular;
   font-size: 14px;
@@ -56,10 +56,13 @@ h5 {
 .dateMain {
   float: right;
   margin-right: 10px;
-  font-size: 12px; }
+  font-size: 12px;
+  font-weight: normal; }
 
 .fromMain {
-  color: #4990E2; }
+  color: #4990E2;
+  margin-left: 5px;
+  font-weight: normal; }
 
 .mainIcons {
   float: right;
