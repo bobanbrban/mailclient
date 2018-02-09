@@ -1,5 +1,4 @@
 import ReactDOM from 'react-dom';
-import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 import React from "react"
 import { createStore } from 'redux';
@@ -15,10 +14,7 @@ import {
   Router,
   Route
 } from 'react-router-dom';
-import FaTrash from 'react-icons/lib/fa/trash';
-import FaInbox from 'react-icons/lib/fa/inbox';
-import FaBug from 'react-icons/lib/fa/bug';
-import App from './components/App';
+import './stylesheets/mailBody.css';
 
 
 

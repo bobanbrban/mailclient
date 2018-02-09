@@ -14,44 +14,42 @@ import * as actionTypes from '../actions/actionCreators';
 
 
 class MailItemthirdtest extends Component {
-
+  
   onClickTrash = () => {
      const { onSetTrash } = this.props;
      onSetTrash();
   }
-
   onClickSpam = () => {
      const { onSetSpam } = this.props;
      onSetSpam();
   }
-
   onClickReaded = () => {
      const { onSetReaded } = this.props;
+     const { onSetRight } = this.props;
      onSetReaded();
+     onSetRight(); 
   }
-
+  onClickReadedBack = () => {
+     const { onSetReadedBack } = this.props;
+     onSetReadedBack(); 
+  }
   render() {
-     const {onClick,mail,showRight,setSpamtest,onReadedClick,clickBack,setReaded,setTrash,clickTrash,clickSpam,onSetTrash,onSetSpam,onClickSetSpam,onClickSetTrash,mailspamtest} =this.props;
-
+     const {mail} =this.props;
     return (
         <div className="mailItems" id="mailRight" >
-         <div>
-           <div className="leftSection" onClick={onClick} >
-            <div onClick={onReadedClick}>
+           <div className="leftSection" onClick={this.onClickReaded}>
                <span className="Sender"><FaUser className="User" /><span className="senderName">{mail.from}</span></span><span className="Date">{mail.date}</span><br/>
-               <span className="Title">{!setReaded &&<FaCircle id="Circle" className="Circle" />}<span className="margintitle">{mail.title}</span></span><br/>
+               <span className="Title">{!this.props.mail.isReaded &&<FaCircle id="Circle" className="Circle"/>}<span className="margintitle">{mail.title}</span></span><br/>
                <span className="mailBodyList">{mail.body}</span><br/>
                <span className="Subject">{mail.subject}</span><br/>
                <span className="To">{mail.to}</span><br/>
                <span className="Tag">{mail.tag}</span><br/>
-            </div>
-           </div>
           </div>
-      {showRight && <div id="rightHidden" className="rightSide">
+      {this.props.mail.showRight && <div id="rightHidden" className="rightSide">
         <h5 className="subjectMain">{mail.subject}
              <span className="mainIcons">
-                <Link to="#" className="mainInbox-link" ><span onClick={this.onClickReaded}><FaCircle onClick={clickBack} className="mainIconCircle" /></span></Link>
-                <Link to="#"  className="mainTrash-link"><span onClick={this.onClickTrash}><FaTrash onClick={clickTrash} className= "mainIconTrash"/></span></Link>
+                <Link to="#" className="mainInbox-link" ><FaCircle onClick={this.onClickReadedBack} className="mainIconCircle" /></Link>
+                <Link to="#"  className="mainTrash-link"><span onClick={this.onClickTrash}><FaTrash className= "mainIconTrash"/></span></Link>
                 <Link to="#" className="mainSpam-link"><FaBug onClick={this.onClickSpam} className="mainIconSpam"/></Link>
              </span>
           </h5>
@@ -68,14 +66,16 @@ class MailItemthirdtest extends Component {
   }
   }
 
-
   const mapStateToProps = state =>  ({
-      state
-  });
+    state
+    });
+
   const mapDispachToProps = (dispatch,ownProps)=> ({
     onSetTrash: () => dispatch({type: actionTypes.SET_TRASH, id:ownProps.mail.id}),
     onSetSpam: () => dispatch({type: actionTypes.SET_SPAM, id:ownProps.mail.id}),
     onSetReaded: () => dispatch({type: actionTypes.SET_READED, id:ownProps.mail.id}),
+    onSetReadedBack: () => dispatch({type: actionTypes.SET_READED_BACK, id:ownProps.mail.id}),
+    onSetRight: () => dispatch({type: actionTypes.SET_RIGHT, id:ownProps.mail.id}),
   });
   const MailItemthird = connect(mapStateToProps, mapDispachToProps)(MailItemthirdtest);
 

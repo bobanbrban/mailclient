@@ -1,12 +1,6 @@
 import React from 'react';
-import FaTrash from 'react-icons/lib/fa/trash';
-import FaInbox from 'react-icons/lib/fa/inbox';
-import FaBug from 'react-icons/lib/fa/bug';
-import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
-import * as actionTypes from '../actions/actionCreators';
 import MailList from './MailList';
-import MailItem from './MailItem';
 import MailListsec from './MailListsec';
 import * as MailImage from '../assets/mail.svg';
 import '../stylesheets/mailList.css';
@@ -15,16 +9,11 @@ import '../stylesheets/mailListItem.css';
 import '../stylesheets/mailBody.css';
 import '../stylesheets/mediaQueries.css';
 
-
 class Spam extends React.Component {
-
-  
     render() {
-
-     const { state } = this.props;
+      const { state } = this.props;
       const mailstest = [state.mailsdata[0]];
       const mailstest2 = [state.mailsdata[1]];
-
        const InboxList = mailstest.map(mail=>{
        if(mail.isSpam === true) {
           return (
@@ -43,7 +32,6 @@ class Spam extends React.Component {
            );  
         };
       })
-      console.log('testInboxList2',InboxList2);  
       return (
           <div>
             <div id="cloneTest" className="mailsList">
@@ -58,7 +46,6 @@ class Spam extends React.Component {
  const mapStateToProps = state =>  ({
    state
  });
-
 const spamApp = connect(mapStateToProps)(Spam);
 
 export default spamApp
