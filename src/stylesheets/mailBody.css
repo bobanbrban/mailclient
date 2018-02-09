@@ -33,6 +33,9 @@ body {
   border-spacing: 20px 5px;
   color: #333333; }
 
+.CircleHidden {
+  dispaly: none; }
+
 .rightSide {
   position: absolute;
   left: 340px;
