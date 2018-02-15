@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import MailItemsecond from './MailItemsecond';
+import MailItem from './MailItem';
 import '../stylesheets/mailList.css';
 import '../stylesheets/mailListHeader.css';
 import '../stylesheets/mailListItem.css';
@@ -7,21 +7,23 @@ import '../stylesheets/mailBody.css';
 import '../stylesheets/mediaQueries.css';
 
 class MailListsec extends Component {
-  render() {
-    let MailItemssec;
-    let mailstestsec= [this.props.mailList[1]];
-    if(mailstestsec) {
-       MailItemssec = mailstestsec.map(mail => {
-        return (
-          <li className="mail1" id="mailRight2" ><MailItemsecond  key={mail.id} mail={mail} /></li>
-       );
+    render() {
+      let MailItemssec;
+      let mailstest= this.props.mailList;
+      if(mailstest) {
+         MailItemssec = mailstest.map((mail,i) => {
+          if(mail.isTrash === true) {
+          return (
+          <li className="mail1" id="mailRight" ><MailItem {...this.props} key={i} i={i} mail={mail}/></li>
+        )};
       });
-    }
-   return  (
+    } 
+  return  (
       <div className="mailList">
        {MailItemssec}
       </div>
       );
   }
 }
+
 export default MailListsec;

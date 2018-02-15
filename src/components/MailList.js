@@ -7,24 +7,23 @@ import '../stylesheets/mailBody.css';
 import '../stylesheets/mediaQueries.css';
 
 class MailList extends Component {
+
     render() {
       let MailItems;
-      let mailstest= [this.props.mailList[0]];
+      let mailstest= this.props.mailList;
       if(mailstest) {
-         MailItems = mailstest.map(mail => {
+         MailItems = mailstest.map((mail,i) => {
+          if((mail.isTrash === false)&&(mail.isSpam === false)) {
           return (
-          <li className="mail1" id="mailRight" ><MailItem key={mail.id} mail={mail} /></li>
-        );
+          <li className="mail1" id="mailRight" ><MailItem {...this.props} key={i} i={i} mail={mail} /></li>
+        )};
       });
-    }
-  
-  return  (
-      <div className="mailList">
+    } 
+    return  (
+     <div className="mailList">
        {MailItems}
       </div>
-      );
-  }
+       );
+   }
 }
-
-
 export default MailList;

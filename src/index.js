@@ -17,8 +17,6 @@ import {
 import './stylesheets/mailBody.css';
 
 
-
-
 const store = createStore(rootReducer);
 console.log(store.getState());
 
